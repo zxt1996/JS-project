@@ -1,0 +1,99 @@
+@charset 'utf-8';
+.popover{
+    white-space: nowrap !important;
+}
+//工具类名用来消除图片间隙
+.imgWrap{
+    img{
+        display: block;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+body{
+    padding-top: 50px;
+    header{
+        .navbar{
+            border-width: 0;
+            margin-bottom: 0;
+            .navbar-brand{
+                padding: 7px 15px 7px 20px;
+            }
+        }
+    }
+    footer{
+        padding-top: 30px;
+        padding-bottom: 37px;
+        background-color: #3b3b3b;
+        .container{
+            .row{
+                .footleft{
+                    p:first-child{
+                        line-height: 14px;
+                        margin-bottom: 15px;
+                        span{
+                            color: #a1a3ab;
+                            margin-left: 14px;
+                            font-size: 14px;
+                        }
+                        span:hover{
+                            opacity: 0.6;
+                        }
+                        span:first-child{
+                            margin-left: 0;
+                        }
+                    }
+                    p:last-child{
+                        font-size: 12px;
+                        color: #a1a3ab;
+                    }
+                }
+                .footright{
+                    .row{
+                        .footitem{
+                            padding-left: 7px;
+                            padding-right: 7px;
+                            button{
+                                width: 38px;
+                                height: 38px;
+                                border-radius: 50%;
+                                background-image: url(../img/common/email.png);
+                                background-repeat: no-repeat;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:992px){
+        footer{
+            .container{
+                .footleft{
+                    width: 100%;
+                }
+                .footright{
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+        }
+    }    
+}
+@media (min-width: 768px){
+    .navbar{
+        border-radius: 0px;
+    }
+}
+@media (min-width:768px) and (max-width:992px){
+    .navbar{
+        .nav>li>a{
+            padding: 15px 3px;
+        }
+    }
+}
+@media (min-width:1200px){
+    .container{
+        width:1000px;
+    }
+}

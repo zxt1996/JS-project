@@ -1,0 +1,71 @@
+@import 'common';
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    form{
+       div{
+           margin-bottom: 20px;
+           span{
+               display: inline-block;
+               width: 80px;
+               text-align: end;
+           }
+           textarea{
+               resize: none;
+           }
+       }
+       div:last-child{
+           display: flex;
+           justify-content: flex-end;
+       }
+       .title{
+           display: flex;
+           p{
+               color: deepskyblue;
+               font-size: 20px;
+           }
+       }
+       
+       .userfather{
+           #onlyuser{
+               width: 250px;
+           }
+       }
+       
+       .pasfather{
+           #onlypass{
+               width: 250px;
+           }
+       }
+       
+       .erruser{
+           display: none;
+           font-size: 12px;
+           color: red;
+           text-align: end;
+           padding: 0;
+           line-height: 0;
+           margin-bottom: 20px;
+       }
+       
+       .errpas{
+           @extend .erruser;
+       }
+        
+        .errsex{
+           @extend .erruser;
+       }
+       .errlike{
+           @extend .erruser;
+       }
+       .errphone{
+           @extend .erruser;
+       }
+       .errabout{
+           @extend .erruser;
+       }
+    }
+    
+}

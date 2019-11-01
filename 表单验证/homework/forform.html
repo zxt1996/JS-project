@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单验证</title>
+		<link rel="stylesheet" type="text/css" href="css/forform.css"/>
+	</head>
+	<body>
+		<div class="box">
+			
+			<form action="" method="post" id="formone">
+				<div class="title">
+					<p>用户注册界面</p>
+				</div>
+				<div class="userfather">
+					<span>用户名：</span>
+					<input type="text" name="user_name" id="onlyuser" value="" placeholder="4到16位（字母、数字，下划线，减号）"/>
+				</div>
+				<div class="erruser">
+					<p>请输入正确的用户名</p>
+				</div>
+				<div class="pasfather">
+					<span>密码：</span>
+					<input type="password" name="pas_name" id="onlypass" value="" placeholder=">6位,大写字母、小写字母、数字>1个"/>
+				</div>
+				<div class="errpas">
+					<p>请输入正确的密码</p>
+				</div>
+				<div class="sexfather">
+					<span>性别：</span>
+					<label for="man">
+					<input type="radio" name="sex" id="man" value="" onclick="test(this)"/>
+					男</label>
+					<label for="woman">
+					<input type="radio" name="sex" id="woman" value="" onclick="test(this)"/>
+					女</label>
+				</div>
+				<div class="errsex">
+					<p>请选择性别</p>
+				</div>
+				<div class="likefather">
+					<span>爱好：</span>
+					<label for="music">
+					<input type="checkbox" name="like" id="music" value=""  onclick="testlike(this)"/>
+					听音乐</label>
+					<label for="movie">
+					<input type="checkbox" name="like" id="movie" value="" onclick="testlike(this)"/>
+					看电影</label>
+					<label for="game">
+					<input type="checkbox" name="like" id="game" value="" onclick="testlike(this)"/>
+					玩游戏</label>
+				</div>
+				<div class="errlike">
+					<p>请选择爱好</p>
+				</div>
+				<div>
+					<span>城市：</span>
+					<select name="">
+						<option value="">北京</option>
+						<option value="">上海</option>
+						<option value="">广州</option>
+					</select>
+				</div>
+				<div class="phonefather">
+					<span>照片：</span>
+					<input type="file" name="phone" id="phone" value="" onclick="testphone(this)"/>
+				</div>
+				<div class="errphone">
+					<p>请选择图片</p>
+				</div>
+				<div class="aboutfather">
+					<span>个人简介：</span>
+					<textarea name="about_you" rows="" cols=""></textarea>
+				</div>
+				<div class="errabout">
+					<p>请填写简介</p>
+				</div>
+				<div>
+					<button>提交</button>
+				</div>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="js/forform.js">
+			
+		</script>
+	</body>
+</html>

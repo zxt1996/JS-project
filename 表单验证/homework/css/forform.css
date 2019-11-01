@@ -1,0 +1,92 @@
+.popover {
+  white-space: nowrap !important; }
+
+.imgWrap img {
+  display: block;
+  max-width: 100%;
+  width: 100%; }
+
+body {
+  padding-top: 50px; }
+  body header .navbar {
+    border-width: 0;
+    margin-bottom: 0; }
+    body header .navbar .navbar-brand {
+      padding: 7px 15px 7px 20px; }
+  body footer {
+    padding-top: 30px;
+    padding-bottom: 37px;
+    background-color: #3b3b3b; }
+    body footer .container .row .footleft p:first-child {
+      line-height: 14px;
+      margin-bottom: 15px; }
+      body footer .container .row .footleft p:first-child span {
+        color: #a1a3ab;
+        margin-left: 14px;
+        font-size: 14px; }
+      body footer .container .row .footleft p:first-child span:hover {
+        opacity: 0.6; }
+      body footer .container .row .footleft p:first-child span:first-child {
+        margin-left: 0; }
+    body footer .container .row .footleft p:last-child {
+      font-size: 12px;
+      color: #a1a3ab; }
+    body footer .container .row .footright .row .footitem {
+      padding-left: 7px;
+      padding-right: 7px; }
+      body footer .container .row .footright .row .footitem button {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-image: url(../img/common/email.png);
+        background-repeat: no-repeat; }
+  @media (max-width: 992px) {
+    body footer .container .footleft {
+      width: 100%; }
+    body footer .container .footright {
+      text-align: center;
+      width: 100%; } }
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0px; } }
+@media (min-width: 768px) and (max-width: 992px) {
+  .navbar .nav > li > a {
+    padding: 15px 3px; } }
+@media (min-width: 1200px) {
+  .container {
+    width: 1000px; } }
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .box form div {
+    margin-bottom: 20px; }
+    .box form div span {
+      display: inline-block;
+      width: 80px;
+      text-align: end; }
+    .box form div textarea {
+      resize: none; }
+  .box form div:last-child {
+    display: flex;
+    justify-content: flex-end; }
+  .box form .title {
+    display: flex; }
+    .box form .title p {
+      color: deepskyblue;
+      font-size: 20px; }
+  .box form .userfather #onlyuser {
+    width: 250px; }
+  .box form .pasfather #onlypass {
+    width: 250px; }
+  .box form .erruser, .box form .errpas, .box form .errsex, .box form .errlike, .box form .errphone, .box form .errabout {
+    display: none;
+    font-size: 12px;
+    color: red;
+    text-align: end;
+    padding: 0;
+    line-height: 0;
+    margin-bottom: 20px; }
+
+/*# sourceMappingURL=forform.css.map */
