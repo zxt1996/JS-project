@@ -1,0 +1,72 @@
+.box{
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+li{
+	list-style-type: none;
+	width: 700px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+span{
+	display: inline-block;
+	text-align: left;
+}
+.order{
+	width: 77px;
+	text-align: center;
+}
+.name{
+	width: 330px;
+	display: flex;
+	align-items: center;
+}
+.time{
+	width: 90px;
+}
+
+.singer{
+	width: 150px;
+}
+
+.odd{
+	background-color: #f7f7f7;
+}
+
+i{
+	margin-right: 10px;
+}
+
+.header{
+	background-color: #f7f7f7;
+	background-image: linear-gradient(0deg, #f7f7f7, #ffffff);
+	border: 1px solid #d8d8d8;
+	border-top: 2px solid #c20c0c;
+	height: 40px;
+}
+
+
+.tbody{
+	border: 1px solid #d8d8d8;
+}
+
+.more{
+	display: flex;
+	justify-content: center;
+	height: 40px;
+	border: 1px solid #d8d8d8;
+}
+
+.retract{
+	display: flex;
+	justify-content: center;
+	height: 40px;
+	border: 1px solid #d8d8d8;
+}
+b{
+	font-weight: 400;
+}
