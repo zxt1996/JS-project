@@ -1,4 +1,15 @@
 var everyli = document.querySelectorAll('.everyli');
+var title = document.querySelector('.title');
+var playcount = document.createElement('span');
+var strong = document.querySelector('.strong');
+var forimg = document.createElement('img');
+var songimg = document.querySelector('.songimg');
+var songh = document.querySelector('.songh');
+var uptime = document.querySelector('.uptime');
+
+if(forupdata()){
+	uptime.textContent = forupdata();
+}
 
 for(let i=0;i<everyli.length;i+2){
 	everyli[i].classList.add('odd');
@@ -18,7 +29,14 @@ function getURL(url){
 				if(xhr.readyState == 4 && xhr.status == 200){
 				temp = JSON.parse(xhr.responseText);
 				data = JSON.parse(JSON.stringify(temp.playlist.tracks));
-				console.log(data[0]);
+				let countdata = temp.playlist.playCount;
+				strong.textContent = countdata;
+				let simg = temp.playlist.coverImgUrl;
+				forimg.src = simg;
+				songimg.appendChild(forimg);
+				let hotname = temp.playlist.name;
+				songh.textContent = hotname;
+				
 				let tem = "";
 				for(let i=0;i<100;i++){
 					let order = i+1;
@@ -29,19 +47,39 @@ function getURL(url){
 							<li class="everyli">
 								<span class="order">${order}</span>
 								<span class="name">
-									<i class="iconfont icon-bofang"></i>
-									<b>${name}</b>
+									<i class="iconfont icon-bofang onei"></i>
+									<a href="#"><b>${name}</b></a>
 								</span>
-								<span class="time">${time}</span>
-								<span class="singer">${singer}</span>
+								<span class="time">
+									<span class="onlytime">${time}</span>
+									<div class="dtime">
+										<span class="add" title="添加到播放列表">
+											<i class="iconfont icon-xinzeng"></i>
+										</span>
+										<span class="collect" title="收藏">
+											<i class="iconfont icon-collect"></i>
+										</span>
+										<span class="share" title="分享">
+											<i class="iconfont icon-share"></i>
+										</span>
+										<span class="download" title="下载">
+											<i class="iconfont icon-download"></i>
+										</span>
+									</div>
+								</span>
+								<span class="singer">
+									<a href="#">${singer}</a>
+								</span>
 							</li>
 				`
 					tem += template;
 				}
 				tbody.innerHTML = tem;
 				let tempname = document.querySelectorAll('.name');
-				let tempi = document.querySelectorAll('i');
-				
+				let tempi = document.querySelectorAll('.onei');
+				let temptime = document.querySelectorAll('.time');
+				let onlytime = document.querySelectorAll('.onlytime');
+				let dtime = document.querySelectorAll('.dtime');
 				for(let i=1;i<4;i++){
 					console.log(tempi[i-1]);
 					let tempimg = document.createElement('img');
@@ -51,6 +89,18 @@ function getURL(url){
 					tempimg.style.marginRight = '20px';
 					tempi[i-1].parentNode.insertBefore(tempimg,tempi[i-1]);
 				}
+				
+				temptime.forEach(function(ele,index){
+					ele.addEventListener('mouseenter',function(){
+						onlytime[index-1].style.display = 'none';
+						dtime[index-1].style.display = 'flex';
+					})
+					
+					ele.addEventListener('mouseleave',function(){
+						onlytime[index-1].style.display = 'inline-block';
+						dtime[index-1].style.display = 'none';
+					})
+				})
 				var everyli = document.querySelectorAll('.everyli');
 				resolve(everyli);
 				
@@ -65,8 +115,8 @@ function getURL(url){
 		xhr.send(null);
 	})
 }
-
-getURL('http://netease.bluej.cn/top/list?idx=1').then(
+//http://netease.bluej.cn/top/list?idx=1
+getURL('Json/data.json').then(
 	(everyli)=>{
 		let temspan = document.createElement('span');
 		let templi = document.createElement('li');
@@ -147,3 +197,10 @@ function changetime(time){
 }
 
 
+function forupdata(){
+	let newdata = new Date();
+	if(newdata.getDay() == 4){
+		return (newdata.getMonth()+1)+'月'+newdata.getDate()+'日';
+	}
+	
+}
