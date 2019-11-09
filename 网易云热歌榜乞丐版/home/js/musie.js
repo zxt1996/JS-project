@@ -7,9 +7,12 @@ var songimg = document.querySelector('.songimg');
 var songh = document.querySelector('.songh');
 var uptime = document.querySelector('.uptime');
 
-if(forupdata()){
-	uptime.textContent = forupdata();
-}
+setInterval(function(){
+	if(forupdata()){
+		uptime.textContent = forupdata();
+	}
+	console.log(uptime.textContent);
+},10000000)
 
 for(let i=0;i<everyli.length;i+2){
 	everyli[i].classList.add('odd');
@@ -43,6 +46,8 @@ function getURL(url){
 					let name = data[`${i}`].name;
 					let time = changetime(data[i].dt);
 					let singer = data[i].ar[0].name;
+					
+					
 					let template = `
 							<li class="everyli">
 								<span class="order">${order}</span>
@@ -75,6 +80,27 @@ function getURL(url){
 					tem += template;
 				}
 				tbody.innerHTML = tem;
+				let nameplay = document.querySelectorAll('.name');
+				let bot = document.querySelector('.bottom');
+				nameplay.forEach(function(ele,index){
+					ele.addEventListener('click',function(){
+						bot.style.display = 'block';
+						let names = data[index-1].name;
+						let songid = "http://music.163.com/song/media/outer/url?id="+data[index-1].id;
+						let songimg = data[index-1].al.picUrl;
+						const ap = new APlayer({
+						    container: bot,
+						    fixed: true,
+						    audio: [{
+							        name: 'name',
+							        artist: names,
+							        url: songid,
+							        cover: songimg,
+						    	}]
+						});
+					})
+				})
+				
 				let tempname = document.querySelectorAll('.name');
 				let tempi = document.querySelectorAll('.onei');
 				let temptime = document.querySelectorAll('.time');
@@ -204,3 +230,4 @@ function forupdata(){
 	}
 	
 }
+

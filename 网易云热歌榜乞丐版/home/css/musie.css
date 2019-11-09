@@ -162,3 +162,11 @@ a{
 	width: 60px;
 	border-right: 1px solid #d7d7d7;
 }
+
+.bottom{
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
