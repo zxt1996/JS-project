@@ -29,6 +29,7 @@ function forcheck(){
 	task.forEach(function(ele,index){
 		let forchange = true
 		ele.addEventListener('click',function(){
+			// ele.classList.toggle('checked');
 			if(forchange){
 				ele.classList.add('checked');
 				forchange = !forchange;
