@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>二级菜单</title>
+	</head>
+	<body>
+		<!--选择一级菜单(大菜,中菜,小菜)后,方可选择二级菜单.
+		美化UI.-->
+		<style type="text/css">
+			.menu{
+				overflow: hidden;
+			}
+			.menu>div{
+				float: left;
+			}
+		</style>
+		<div class="menu">
+			<div>
+				一级菜单
+				<select name="bigCai" class="bigCai">
+					<option value="">请选择</option>
+				</select>
+			</div>
+			<div>
+				二级菜单
+				<select name="smallCai" class="smallCai">
+					<option value="">请选择</option>
+				</select>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var menu = [
+		        {
+		        	"type_id":1,
+			        "name":"大菜",
+			        "food":[
+			            {"food_id":1,"name":"鱼香肉丝","price":"10"},
+			            {"food_id":2,"name":"红烧肉","price":"11"},
+			            {"food_id":3,"name":"香辣粉","price":"12"}
+			        ]},
+		        {
+		        	"type_id":2,
+		        	"name":"中菜",
+		        	"food":[
+			            {"food_id":4,"name":"小炒肉","price":"13"},
+			            {"food_id":5,"name":"云吞","price":"14"}
+			        ]},
+		        {
+		        	"type_id":3,
+		        	"name":"小菜",
+		        	"food":[
+			            {"food_id":6,"name":"雪糕","price":"15"},
+			            {"food_id":7,"name":"黄瓜","price":"16"}
+		        ]}      
+		    ];
+
+			var bigCai = document.querySelector('.bigCai');
+			var smallCai = document.querySelector('.smallCai');
+			let template = "";
+			let name,type_id;
+			menu.forEach(function(ele,index){
+				name = ele.name;
+				type_id = ele.type_id;
+				template += `<option value="${type_id}">${name}</option>`;
+			})
+			bigCai.innerHTML += template;
+
+			bigCai.addEventListener('change',function(){
+				let tempid = bigCai.value;
+				menu.forEach(function(ele,index){
+					
+					if(ele.type_id == tempid){
+						let food_id,name,price;
+						let result = "";
+						result += `<option value="">请选择</option>`;
+						ele.food.forEach(function(eles,indexss){
+							price = eles.price;
+							food_id = eles.food_id;
+							name = eles.name;
+							result += `<option value="${food_id}" price="${price}">${name}</option>`;
+							
+						})
+						smallCai.innerHTML = result;
+					}
+				})
+			})
+		</script>
+	</body>
+</html>
