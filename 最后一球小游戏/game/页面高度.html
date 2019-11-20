@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        let body = document.querySelector('body');
+        body.style.height = '100vh';
+        body.style.width = '100vw';
+
+        var div = document.createElement('div');
+        //随机生成球的宽高，且直径不小于15
+        var divW = divH = Math.floor(Math.random()*40+15);
+        //获取页面高度
+        var clientH = document.documentElement.clientHeight;
+        var clientW = document.documentElement.clientWidth;
+        // 随机生成top值，left值
+        var divT = Math.floor(Math.random()*clientH);
+        var divL = Math.floor(Math.random()*clientW);
+        // 防止超出屏幕,如果超出最大top或left，则让球贴边
+        divT > clientH - divH ? divT = clientH -  divH : "";
+        divL > clientW - divW ? divL = clientW -  divW : "";
+        
+
+        div.style.width = `${divW}px`;
+        div.style.height = `${divH}px`;
+        div.style.top = `${divT}px`;
+        div.style.left = `${divL}px`;
+        div.style.borderRadius = '50%';
+    </script>
+</body>
+</html>

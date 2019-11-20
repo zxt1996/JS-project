@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0px;
+				margin: 0px;
+				box-sizing: border-box;
+			}
+			
+			.box {
+				line-height: 500px;
+				padding: 10px 0px;
+				overflow: hidden;
+				margin: 0 auto;
+				width: 300px;
+				height: 500px;
+				border: 1px solid black;
+				border-radius: 25px;
+			}
+			
+			.one {
+				margin: 10px 0px;
+				width: 300px;
+				height: 460px;
+				text-align: center;
+			}
+			.one >h2{
+				display: inline-block;
+				height: 40px;
+				background: black;
+				color: white;
+			}
+			.two {
+				padding: 10px;
+				background: yellow;
+				width: 280px;
+				height: 480px;
+				transform: translateX(120%) translateY(-100%);
+			}
+			
+			.active1 {
+				transition: all 1s;
+				transform: translateX(-120%);
+			}
+			.active2 {
+				transition: all 1s;
+				transform: translateX(-0%) translateY(-100%);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="one">
+				<h2>START</h2>
+			</div>
+			<div class="two">
+				<h2></h2>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var one = document.querySelector(".one")
+			var strBtn = document.querySelector(".one h2")
+			var two = document.querySelector(".two")
+			strBtn.addEventListener("click", function() {
+				one.classList.toggle("active1")
+				two.classList.toggle("active2")
+			})
+		</script>
+	</body>
+
+</html>

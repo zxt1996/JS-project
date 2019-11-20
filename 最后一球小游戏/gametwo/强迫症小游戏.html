@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			.box {
+				overflow: hidden;
+				padding: 20px 10px;
+				margin: 0 auto;
+				width: 280px;
+				height: 500px;
+				border: 1px solid black;
+				border-radius: 25px;
+			}
+			
+			.one {
+				height: 460px;
+				width: 260px;
+				text-align: center;
+			}
+			
+			.two {
+				position: relative;
+				transform: translateX(110%) translateY(-100%);
+				background: black;
+				height: 460px;
+				width: 260px;
+			}
+			
+			.one>h1 {
+				font-size: 70px;
+			}
+			
+			.one>h2 {
+				border-bottom: 1px solid;
+				font-size: 16px;
+				margin-bottom: 110px;
+			}
+			
+			.one>h3 {
+				background: black;
+				display: inline-block;
+				color: white;
+				font-size: 40px;
+			}
+			
+			.one>h4 {
+				margin-top: 18px;
+				text-align: left;
+			}
+			
+			.one>h5 {
+				text-align: left;
+			}
+			
+			.active1 {
+				transform: translateX(-120%);
+				transition: all 2s;
+			}
+			
+			.active2 {
+				display: block;
+				transition: all 2s;
+				transform: translateX(-1px) translateY(-100%);
+			}
+			.ball{
+				position: absolute;
+				background: white;
+				border-radius: 50%;
+			}
+			.randBall{
+				position: absolute;
+				background: white;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="one">
+				<h1>LAST ONE</h1>
+				<h2>FOCUS VISION ON THE SCEEN</h2>
+				<h3>START</h3>
+				<h4>Tips:</h4>
+				<h5>CLICK ONE A POINT LAST SEEN</h5>
+			</div>
+			<div class="two"></div>
+		</div>
+		<script type="text/javascript">
+			var one = document.querySelector(".one");
+			var two = document.querySelector(".two");
+			var startBtn = document.querySelector(".one >h3")
+			var ball = document.createElement("h1")
+			var ranDom =Math.round(Math.random()*30+20)
+			var ranDoml1 = Math.round(Math.random()*180+20)
+			var ranDomt1 = Math.round(Math.random()*400)
+			console.log(ranDom)
+			ball.classList.add("ball")
+			ball.style.width=ranDom+"px"
+			ball.style.height=ranDom+"px"
+			ball.style.left=ranDoml1+"px"
+			ball.style.top=ranDomt1+"px"
+			startBtn.addEventListener("click", function() {
+				one.classList.toggle("active1")
+				two.classList.toggle("active2")
+				two.appendChild(ball)
+			})
+			ball.addEventListener("click",function(){
+				var randBall = document.createElement("h1")
+				var ranDom1 =Math.round(Math.random()*30+20)
+				var ranDoml2 = Math.round(Math.random()*180+20)
+				var ranDomt2 = Math.round(Math.random()*400)
+				randBall.style.width=ranDom1+"px"
+				randBall.style.height=ranDom1+"px"
+				randBall.style.top=ranDomt2+"px"
+				randBall.style.left=ranDoml2+"px"
+				var randBalli = document.querySelector(".ball")
+				var ballInfo = randBalli.getBoundingClientRect()
+				var t1 = ballInfo.top
+				var l1 = ballInfo.left
+				var r1 = ballInfo.right
+				var b1 = ballInfo.bottom
+				console.log(t1,l1,r1,b1)
+				randBall.classList.add("randBall")
+					two.appendChild(randBall)
+				var rBall = document.querySelectorAll(".randBall")
+				console.log(rBall)
+			})
+			
+		</script>
+	</body>
+
+</html>

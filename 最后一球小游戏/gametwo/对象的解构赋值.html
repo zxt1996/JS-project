@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			对象的解构赋值,可以快速地复制右侧对象里的同名变量
+			function ajax (option){
+				var {url,method,data} = option;
+				console.log(url,data,method)//pornhub {id: 1024} GET
+				
+				
+//				如果需要拿到解构下面的id可以这么做
+				var {url,method,data:{id}} = option;
+				console.log(url,id,method)//pornhub 1024 GET
+			}
+			ajax({
+				method:"GET",
+				data:{id:1024},
+				url:"pornhub"
+			})
+		</script>
+	</body>
+</html>
