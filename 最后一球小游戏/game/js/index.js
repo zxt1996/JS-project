@@ -10,7 +10,7 @@ function createball(){
 	let tempx = parseInt(Math.random() *30 + 20);
 	let tempW = parseInt(Math.random() *90);
 	let tempH = parseInt(Math.random() *90);
-	
+	let rand = [Math.random()*250,Math.random()*250,Math.random()*250];
 	let forrig = 90 - tempW;
 	let forbot = 90 - tempH;
 	if(posi.length == 0){
@@ -45,7 +45,7 @@ function createball(){
 	let temp = `<div id='one' class='ball'
 					style="width:${tempx}px;
 					height:${tempx}px;
-					background-color: black;
+					background-color: rgb(${rand[0]}, ${rand[1]}, ${rand[2]});
 					border-radius: 50%;
 					top:${tempH}%;
 					left:${tempW}%;
@@ -56,11 +56,15 @@ function createball(){
 	let ball = document.querySelectorAll('.ball');
 	if(ball.length < 20){
 		ball.forEach(function(ele,index){
-			if(index == ball.length-1){
+			ele.style.pointerEvents = 'auto';
+			if(index == ball.length-1 && index != 19){
 				ele.addEventListener('click',function(){
+					ele.style.pointerEvents = 'none';
+					// ele.setAttribute('pointer-events','none');
 					let change = document.createElement('div');
 					change.classList.add('change');
 					change.textContent = "第"+(index+1)+"关";
+					box.removeChild(box.lastChild);
 					box.appendChild(change);
 					setTimeout(function(){
 						change.style.right = '0';
@@ -72,7 +76,10 @@ function createball(){
 				})
 			}else{
 				ele.addEventListener('click',function(){
-					let fails = `<div class="fail">
+					ele.classList.add('opaci');
+					setTimeout(function(){
+						ele.classList.remove('opaci');
+						let fails = `<div class="fail">
 							    	<i class="failfont">
 							    		挑战失败
 							    	</i>
@@ -80,11 +87,12 @@ function createball(){
 							    		重新挑战
 							    	</i>
 							    </div>`;
-					box.innerHTML = fails;
-					let restart = document.querySelector('.restart');
-					restart.addEventListener('click',function(){
-						window.location.reload();
-					})
+						box.innerHTML = fails;
+						let restart = document.querySelector('.restart');
+						restart.addEventListener('click',function(){
+							window.location.reload();
+						})
+					},2000)
 				})
 			}
 		})
