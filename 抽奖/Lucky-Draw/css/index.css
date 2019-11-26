@@ -1,0 +1,302 @@
+@charset "UTF-8";
+body, p, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, select, textarea, button, th, td, menu {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul, dl, ol {
+  list-style: none;
+}
+
+img, fieldset, input[type="submit"] {
+  border: 0 none;
+}
+
+em {
+  font-style: normal;
+}
+
+strong {
+  font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button, input[type="button"] {
+  cursor: pointer;
+  border: 0 none;
+}
+
+a, button, input, img {
+  -webkit-touch-callout: none;
+}
+
+img {
+  /*pointer-events:none;*/
+  /*禁止图片的点击事件，例如长按保存图片*/
+}
+
+input, select, textarea {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+html, body {
+  /*禁止用户选择元素*/
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  /*禁止元素点击出现半透明黑色背景*/
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+  /*height: 100%;width: 100%;*/
+  font-family: 'Heiti SC', 'Microsoft YaHei';
+  outline: 0;
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  /*height: 100%;*/
+  margin: 0;
+  position: relative;
+}
+
+.lucky {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #161535;
+}
+
+.lucky .getTDD {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #201a48;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  color: white;
+}
+
+.lucky .crotary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.lucky .crotary .left {
+  width: 660px;
+  height: 660px;
+  position: relative;
+  background-color: #201a48;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lucky .crotary .left .rotary {
+  width: 450px;
+  height: 450px;
+  background-color: #fe8b36;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.lucky .crotary .left .rotary .rotaryball {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: 50%;
+  background-color: #ffe9c2;
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  border: 1px solid yellow;
+  color: #fe8b36;
+  text-align: end;
+  line-height: 100%;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.lucky .crotary .left .mids {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ff4443;
+  position: absolute;
+  margin: 0;
+  top: 44%;
+  left: 43%;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  color: white;
+  border: 10px solid #feba65;
+  z-index: 20px;
+}
+
+.lucky .crotary .left .mids .mid {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lucky .crotary .left .mids .mid span {
+  font-weight: bolder;
+  font-size: 22px;
+}
+
+.lucky .crotary .left .arrow {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #de2207;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: rotate(0) skewY(30deg);
+          transform: rotate(0) skewY(30deg);
+}
+
+.lucky .crotary .right {
+  padding: 24px;
+  margin-left: 37px;
+  background-color: #201a48;
+  color: white;
+}
+
+.lucky .crotary .right .hright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.lucky .crotary .right .hright .hr {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #4e3eb4;
+  padding: 11px;
+  border-radius: 30px;
+}
+
+.lucky .crotary .right .hright::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #4e3eb4;
+}
+
+.lucky .crotary .right .hright::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #4e3eb4;
+}
+
+.lucky .crotary .right .mright {
+  margin-top: 27px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #9785ff;
+}
+/*# sourceMappingURL=index.css.map */
