@@ -43,17 +43,22 @@ getJSON("http://49.232.166.11:2626/index/wheel/get_prize_list").then(resp => {
 getJSON('http://49.232.166.11:2626/index/wheel/get_draw_record_list').then(res=>{
     console.log(res);
     let temp = 0;
-    console.log(new Date(temp));
     let content = document.createDocumentFragment();
     let mysetinterval = setInterval(()=>{
-        let time = parseInt(res.data.draw_record_list[temp].draw_time_stamp)*10000;
+        let time = parseInt(res.data.draw_record_list[temp].draw_time_stamp)*1000;
         let truetime = new Date(time);
+        let realytruetime = truetime.getFullYear()
+                            + '.' + truetime.getMonth()
+                            + '.' + truetime.getDate()
+                            + ' ' + truetime.getHours()
+                            + ':' + truetime.getMinutes();
+        console.log(realytruetime);
         let result = res.data.draw_record_list[temp].prize_name;
         let div = document.createElement('div');
         let spant = document.createElement('span');
         let spanr = document.createElement('span');
         spanr.textContent = `${result}`;
-        spant.textContent = `${time}`;
+        spant.textContent = `${realytruetime}`;
         div.appendChild(spant);
         div.appendChild(spanr);
         content.appendChild(div);
