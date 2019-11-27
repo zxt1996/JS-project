@@ -95,6 +95,136 @@ body {
   position: relative;
 }
 
+li {
+  list-style-type: none;
+}
+
+.header {
+  background-color: #06002c;
+  padding-top: 32px;
+}
+
+.header .hone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 37px;
+}
+
+.header .hone .oneleft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .hone .oneleft li {
+  margin-right: 29px;
+  color: white;
+}
+
+.header .hone .oneright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .hone .oneright li {
+  margin-right: 39px;
+  color: #a2a2a2;
+}
+
+.header .headcontent {
+  background-image: url(../img/head.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 116px;
+  padding-bottom: 52px;
+}
+
+.header .headcontent .htwo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .headcontent .htwo .htwoh span:nth-of-type(1) {
+  color: white;
+  font-size: 45px;
+}
+
+.header .headcontent .htwo .htwoh span:nth-of-type(2) {
+  color: #2e88fa;
+  font-size: 45px;
+}
+
+.header .headcontent .htwo .htwob {
+  margin-top: 21px;
+}
+
+.header .headcontent .htwo .htwob span {
+  color: white;
+  font-size: 16px;
+}
+
+.header .headcontent .hthree {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 46px;
+}
+
+.header .headcontent .hthree div {
+  background-color: #fbb233;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 11px 27px;
+  border-radius: 6px;
+}
+
+.header .headcontent .hthree div span:nth-of-type(1) {
+  color: #c47d00;
+}
+
+.header .headcontent .hthree div span:nth-of-type(2) {
+  font-size: 22px;
+  color: #a44900;
+  font-weight: bold;
+}
+
+.header .headcontent .hthree .hthreeleft {
+  margin-right: 36px;
+}
+
 .lucky {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,16 +243,26 @@ body {
 }
 
 .lucky .getTDD {
+  width: 985px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #201a48;
   margin-top: 35px;
   margin-bottom: 35px;
   color: white;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.lucky .getTDD img {
+  margin-right: 10px;
 }
 
 .lucky .crotary {
@@ -135,8 +275,7 @@ body {
 }
 
 .lucky .crotary .left {
-  width: 660px;
-  height: 660px;
+  padding: 72px;
   position: relative;
   background-color: #201a48;
   display: -webkit-box;
@@ -150,20 +289,88 @@ body {
           align-items: center;
 }
 
-.lucky .crotary .left .rotary {
+.lucky .crotary .left .rotaryfour {
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background-color: #fbb234;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lucky .crotary .left .rotaryfour .rotarythree {
+  width: 510px;
+  height: 510px;
+  border-radius: 50%;
+  background-color: #231c47;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lucky .crotary .left .rotaryfour .rotarythree .rotaryone {
+  width: 490px;
+  height: 490px;
+  border-radius: 50%;
+  background-color: #ffd681;
+  -webkit-box-shadow: inset 10px 10px 20px 5px #ffd681;
+          box-shadow: inset 10px 10px 20px 5px #ffd681;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lucky .crotary .left .rotaryfour .rotarythree .rotaryone .rotarytwo {
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background-color: #fe8b36;
+  -webkit-box-shadow: 1px 1px 8px #fe8b36,-1px -1px 8px #fe8b36,-1px 1px 8px #fe8b36,1px -1px 8px #fe8b36;
+          box-shadow: 1px 1px 8px #fe8b36,-1px -1px 8px #fe8b36,-1px 1px 8px #fe8b36,1px -1px 8px #fe8b36;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lucky .crotary .left .rotaryfour .rotarythree .rotaryone .rotarytwo .rotary {
   width: 450px;
   height: 450px;
   background-color: #fe8b36;
   border-radius: 50%;
-  position: relative;
   overflow: hidden;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
+  position: absolute;
 }
 
-.lucky .crotary .left .rotary .rotaryball {
+.lucky .crotary .left .rotaryfour .rotarythree .rotaryone .rotarytwo .rotary .rotaryball {
   position: absolute;
   margin: 0;
   top: 0;
@@ -177,12 +384,22 @@ body {
           transform-origin: 100% 100%;
   border: 1px solid yellow;
   color: #fe8b36;
-  text-align: end;
-  line-height: 100%;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
+  text-align: center;
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.lucky .crotary .left .rotaryfour .rotarythree .rotaryone .rotarytwo .rotary .rotaryball .ballcontent {
+  display: inline-block;
+  color: #fe903e;
+  margin-top: 20px;
+  width: 100px;
+  height: 120px;
 }
 
 .lucky .crotary .left .mids {
@@ -243,6 +460,8 @@ body {
   margin-left: 37px;
   background-color: #201a48;
   color: white;
+  height: 700px;
+  overflow: hidden;
 }
 
 .lucky .crotary .right .hright {
@@ -269,6 +488,14 @@ body {
   background-color: #4e3eb4;
   padding: 11px;
   border-radius: 30px;
+}
+
+.lucky .crotary .right .hright .hr span {
+  letter-spacing: 3px;
+}
+
+.lucky .crotary .right .hright .hr span b {
+  color: #fbb234;
 }
 
 .lucky .crotary .right .hright::before {
@@ -298,5 +525,115 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: #9785ff;
+}
+
+.lucky .crotary .right .righttc > div {
+  margin-top: 27px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+}
+
+.lucky .luckybottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 967px;
+  padding: 55px 0;
+}
+
+.lucky .luckybottom .lbh {
+  color: #3a96fb;
+  font-size: 28px;
+  margin-bottom: 28px;
+}
+
+.lucky .luckybottom .lbc {
+  color: #b0aad5;
+}
+
+.lucky .luckybottom .lbc p {
+  word-break: break-all;
+  margin-bottom: 14px;
+}
+
+.lucky .luckybottom .lbc p b {
+  color: #318bfa;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #17181b;
+  padding: 66px 0;
+}
+
+.footer .footleft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .footleft div {
+  margin-right: 82px;
+}
+
+.footer .footleft div h4 {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.footer .footleft div li {
+  color: #626369;
+  margin-bottom: 22px;
+}
+
+.footer .footright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-left: 300px;
+  color: #5e5f65;
+}
+
+.footer .footright p {
+  margin-bottom: 40px;
+}
+
+.footer .footright div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.footer .footright div li {
+  margin-left: 20px;
+}
+
+.footer .footright div li i {
+  font-size: 26px;
 }
 /*# sourceMappingURL=index.css.map */

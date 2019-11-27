@@ -1,0 +1,56 @@
+{
+    "res": 1,
+    "msg": "成功获取",
+    "data": {
+        "prize_list": [
+            {
+                "id": 1,
+                "name": "苹果手机",
+                "grade_id": 1,
+                "diagram": "http:\/\/student.bluej.cn\/public\/thumb\/201906271630274896.png"
+            },
+            {
+                "id": 2,
+                "name": "苹果平板",
+                "grade_id": 2,
+                "diagram": "http:\/\/student.bluej.cn\/public\/thumb\/201906271630432754.png"
+            },
+            {
+                "id": 3,
+                "name": "water",
+                "grade_id": 4,
+                "diagram": "http:\/\/student.bluej.cn\/public\/thumb\/201906271632539595.png"
+            },
+            {
+                "id": 4,
+                "name": "water",
+                "grade_id": 4,
+                "diagram": "http:\/\/student.bluej.cn\/public\/thumb\/201906271633061132.png"
+            },
+            {
+                "id": 5,
+                "name": "比特币",
+                "grade_id": 3,
+                "diagram": "http:\/\/student.bluej.cn\/public\/thumb\/201906271633195796.png"
+            },
+            {
+                "id": 6,
+                "name": "water",
+                "grade_id": 4,
+                "diagram": "http:\/\/student.bluej.cn\/public\/thumb\/201906271633327629.png"
+            },
+            {
+                "id": 7,
+                "name": "Sony-XM3",
+                "grade_id": 1,
+                "diagram": "http:\/\/student.bluej.cn\/public\/thumb\/201907151206253067.jpg"
+            },
+            {
+                "id": 8,
+                "name": "威哥",
+                "grade_id": 4,
+                "diagram": "http:\/\/student.bluej.cn\/public\/thumb\/201907151206597232.png"
+            }
+        ]
+    }
+}
