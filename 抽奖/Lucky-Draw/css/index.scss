@@ -229,7 +229,6 @@ li{
             margin-left: 37px;
             background-color: #201a48;
             color: white;
-            height: 700px;
             overflow: hidden;
             .hright{
                 display: flex;
@@ -270,16 +269,28 @@ li{
             .mright{
                 margin-top: 27px;
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-around;
                 color: #9785ff;
             }
             .righttc{
+                overflow-y: scroll;
+                margin-top: 10px;
+                height: 500px;
                 > div{
                     margin-top: 27px;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: space-around;
                     color: white;
                 }
+            }
+            .righttc::-webkit-scrollbar {
+                width: 10px;
+                background-color: #F5F5F5;
+            }
+            .righttc::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background-color: #FFF;
+                background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(#1e023a), to(rgb(131, 13, 167)), color-stop(.6,rgb(221, 130, 221)));
             }
         }
     }

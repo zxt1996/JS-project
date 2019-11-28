@@ -5,7 +5,14 @@ let crotary = document.querySelector('.crotary');
 let todaynum = document.querySelector('.todaynum');
 let banTDD = document.querySelector('.banTDD');
 let righttc = document.querySelector('.righttc');
-
+let realate = {
+    '1':1,
+    '2':0,
+    '3':5,
+    '4':4,
+    '5':3,
+    '6':2
+}
 function getJSON(url){
     return new Promise(function(resolve,reject){
         var XHR = new XMLHttpRequest();
@@ -36,6 +43,7 @@ getJSON("http://49.232.166.11:2626/index/wheel/get_prize_list").then(resp => {
         ballcontent[index].style.backgroundImage = `url(${imgs})`;
         ballcontent[index].style.backgroundRepeat = 'no-repeat';
         ballcontent[index].style.backgroundPosition = 'center center';
+        ballcontent[index].stylebackgroundSize = 'initial';
     });
     
 });
@@ -47,20 +55,10 @@ getJSON('http://49.232.166.11:2626/index/wheel/get_draw_record_list').then(res=>
     let mysetinterval = setInterval(()=>{
         let time = parseInt(res.data.draw_record_list[temp].draw_time_stamp)*1000;
         let truetime = new Date(time);
-        let realytruetime = truetime.getFullYear()
-                            + '.' + truetime.getMonth()
-                            + '.' + truetime.getDate()
-                            + ' ' + truetime.getHours()
-                            + ':' + truetime.getMinutes();
+        let realytruetime = fortime(truetime)
         console.log(realytruetime);
         let result = res.data.draw_record_list[temp].prize_name;
-        let div = document.createElement('div');
-        let spant = document.createElement('span');
-        let spanr = document.createElement('span');
-        spanr.textContent = `${result}`;
-        spant.textContent = `${realytruetime}`;
-        div.appendChild(spant);
-        div.appendChild(spanr);
+        let div = formore(result,realytruetime);
         content.appendChild(div);
         if(temp == res.data.draw_record_list.length - 1){
             righttc.appendChild(content);
@@ -71,6 +69,16 @@ getJSON('http://49.232.166.11:2626/index/wheel/get_draw_record_list').then(res=>
     },10);
 })
 
+function formore(result,realytruetime){
+    let div = document.createElement('div');
+    let spant = document.createElement('span');
+    let spanr = document.createElement('span');
+    spanr.textContent = `${result}`;
+    spant.textContent = `${realytruetime}`;
+    div.appendChild(spant);
+    div.appendChild(spanr);
+    return div;
+}
 getJSON('../data/head.json').then(res=>{
     let temp = 0;
     setInterval(function(){
@@ -91,9 +99,17 @@ getJSON('../data/head.json').then(res=>{
     },1000);
 });
 
-function rot(num){
+function fortime(timenum){
+    let realytruetime = timenum.getFullYear()
+                            + '.' + (timenum.getMonth()+1)
+                            + '.' + timenum.getDate()
+                            + ' ' + timenum.getHours()
+                            + ':' + timenum.getMinutes();
+    return realytruetime;
+}
+function rot(num,six){
     rotaryball.forEach((ele,index)=>{
-        let temp = 60*(index+1) + num*360;
+        let temp = 60*(index+1) + num*360 + 60*six;
         ele.style.transform = `rotate(${temp}deg) skewY(30deg)`;
         ele.style.display = 'flex';
         ele.style.justifyContent = 'flex-end';
@@ -109,7 +125,7 @@ function rot(num){
     })
 }
 
-rot(0);
+rot(0,0);
 
 
 let yourchance = 4;
@@ -128,23 +144,54 @@ function midsclick(){
     },1500);
 }
 mids.addEventListener('click',function(){  
-    let who = 0;
-    // getJSON('').then(res=>{
-    //     console.log(res);
-    // });
-    console.log(who);
-    mids.style.pointerEvents = 'none';
-    if(yourchance>0){
-        tempnum += parseInt(Math.random()*10)+10;
-        console.log(tempnum);
-        rot(tempnum);
-        midsset = setTimeout(()=>{
-            mids.style.pointerEvents = 'auto';
-        },1500);
-    }else{
-        alert('今天的次数用完了')
-        yourchance += 1;
-    }
-    yourchance -= 1;
-    todaynum.textContent = `${yourchance}`;
+    getJSON('http://49.232.166.11:2626/index/wheel/draw?phone=13224567876').then(res=>{
+        console.log(res.data.bingo_prize_id);
+        let who = res.data.bingo_prize_id;
+        mids.style.pointerEvents = 'none';
+        if(yourchance>0){
+            tempnum += parseInt(Math.random()*10)+10;
+            rot(tempnum,who);
+            let nowstime = fortime(new Date());
+            let content = document.createDocumentFragment();
+            if(who >= 7){
+                let tnum = who % 6;
+                let nownum = realate[tnum];
+                console.log(ballcontent[nownum].textContent);
+                setTimeout(()=>{
+                    let nowcontent = formore(ballcontent[nownum].textContent,nowstime);
+                    content.appendChild(nowcontent);
+                    righttc.insertBefore(content,righttc.firstChild);
+                },2000);
+            }else{
+                let nownum = realate[who];
+                console.log(ballcontent[nownum].textContent);
+                setTimeout(()=>{
+                    let nowcontent = formore(ballcontent[nownum].textContent,nowstime);
+                    content.appendChild(nowcontent);
+                    righttc.insertBefore(content,righttc.firstChild);
+                },2000);
+            }
+            midsset = setTimeout(()=>{
+                mids.style.pointerEvents = 'auto';
+            },1500);
+        }else{
+            alert('今天的次数用完了')
+            yourchance += 1;
+        }
+        yourchance -= 1;
+        todaynum.textContent = `${yourchance}`;
+    });
 });
+
+// 颠倒子节点的顺序
+function reverse(father){
+    let content = document.createDocumentFragment();
+    let childsList = father.childNodes;
+    for(let i = childsList.length - 1;i>=0;i--){
+        content.appendChild(childsList[i]);
+    }
+    while (father.hasChildNodes()) {
+        father.removeChild(divlist.firstChild);
+    }
+    father.appendChild(content);
+}
