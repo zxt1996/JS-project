@@ -1,10 +1,17 @@
 let ballcontent = document.querySelectorAll('.ballcontent');
+let ballcontents = document.querySelectorAll('.ballcontents');
 let rotaryball = document.querySelectorAll('.rotaryball');
 let mids = document.querySelector('.mids');
 let crotary = document.querySelector('.crotary');
 let todaynum = document.querySelector('.todaynum');
 let banTDD = document.querySelector('.banTDD');
 let righttc = document.querySelector('.righttc');
+let imgball = document.querySelectorAll('.imgball');
+let point = document.querySelector('.point');
+let pointname = document.querySelector('.pointname');
+let pointimg = document.querySelector('.pointimg');
+let pimgcenter = document.querySelector('.pimgcenter');
+let iconerror = document.querySelector('.icon-error');
 let realate = {
     '1':1,
     '2':0,
@@ -37,13 +44,13 @@ function getJSON(url){
 }
 
 getJSON("http://49.232.166.11:2626/index/wheel/get_prize_list").then(resp => {
-    ballcontent.forEach(function(ele,index){
+    ballcontents.forEach(function(ele,index){
         ele.textContent = resp.data.prize_list[index].name;
         let imgs = resp.data.prize_list[index].diagram;
-        ballcontent[index].style.backgroundImage = `url(${imgs})`;
-        ballcontent[index].style.backgroundRepeat = 'no-repeat';
-        ballcontent[index].style.backgroundPosition = 'center center';
-        ballcontent[index].stylebackgroundSize = 'initial';
+        imgball[index].style.backgroundImage = `url(${imgs})`;
+        imgball[index].style.backgroundRepeat = 'no-repeat';
+        imgball[index].style.backgroundPosition = 'center center';
+        imgball[index].stylebackgroundSize = '100% 100%';
     });
     
 });
@@ -110,12 +117,12 @@ function fortime(timenum){
 function rot(num,six){
     rotaryball.forEach((ele,index)=>{
         let temp = 60*(index+1) + num*360 + 60*six;
-        ele.style.transform = `rotate(${temp}deg) skewY(30deg)`;
+        ele.style.transform = `rotateZ(${temp}deg) skewY(30deg)`;
         ele.style.display = 'flex';
         ele.style.justifyContent = 'flex-end';
         ele.style.alignItems = 'center';
         // ele.style.flexDirection = "column";
-        ballcontent[index].style.transform = `rotate(-48deg) skewY(0)`;
+        ballcontent[index].style.transform = `rotateZ(-48deg) skewY(-3deg)`;
         if(num>=0){
             ele.style.transitionTimingFunction = 'cubic-bezier(0.82, 0.01, 0, 0.89)';
         }
@@ -132,17 +139,17 @@ let yourchance = 4;
 todaynum.textContent = `${yourchance}`;
 let tempnum=0;
 let midsset;
-function midsclick(){
-    yourchance -= 1;
-    todaynum.textContent = `${yourchance}`;
-    mids.style.pointerEvents = 'none';
-    tempnum += parseInt(Math.random()*10)+10;
-    console.log(tempnum);
-    rot(tempnum);
-    midsset = setTimeout(()=>{
-        mids.style.pointerEvents = 'auto';
-    },1500);
-}
+// function midsclick(){
+//     yourchance -= 1;
+//     todaynum.textContent = `${yourchance}`;
+//     mids.style.pointerEvents = 'none';
+//     tempnum += parseInt(Math.random()*10)+10;
+//     console.log(tempnum);
+//     rot(tempnum);
+//     midsset = setTimeout(()=>{
+//         mids.style.pointerEvents = 'auto';
+//     },1500);
+// }
 mids.addEventListener('click',function(){  
     getJSON('http://49.232.166.11:2626/index/wheel/draw?phone=13224567876').then(res=>{
         console.log(res.data.bingo_prize_id);
@@ -165,6 +172,14 @@ mids.addEventListener('click',function(){
             }else{
                 let nownum = realate[who];
                 console.log(ballcontent[nownum].textContent);
+                pointname.innerHTML = `${ballcontent[nownum].textContent}`;
+                pimgcenter.style.backgroundImage = imgball[nownum].style.backgroundImage;
+                pimgcenter.style.backgroundRepeat = 'no-repeat';
+                pimgcenter.stylebackgroundSize = '100% 100%';
+                pimgcenter.style.backgroundPosition = 'center center';
+                pimgcenter.style.height = '100px';
+                pimgcenter.style.width = '100px';
+                
                 setTimeout(()=>{
                     let nowcontent = formore(ballcontent[nownum].textContent,nowstime);
                     content.appendChild(nowcontent);
@@ -173,7 +188,9 @@ mids.addEventListener('click',function(){
             }
             midsset = setTimeout(()=>{
                 mids.style.pointerEvents = 'auto';
-            },1500);
+                point.style.display = 'flex';
+                pimgcenter.style.margin = '0 auto';
+            },2500);
         }else{
             alert('今天的次数用完了')
             yourchance += 1;
@@ -195,3 +212,7 @@ function reverse(father){
     }
     father.appendChild(content);
 }
+
+iconerror.addEventListener('click',function(){
+    point.style.display = 'none';
+})

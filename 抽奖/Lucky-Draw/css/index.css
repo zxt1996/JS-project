@@ -402,6 +402,13 @@ li {
   height: 120px;
 }
 
+.lucky .crotary .left .rotaryfour .rotarythree .rotaryone .rotarytwo .rotary .rotaryball .ballcontent .imgball {
+  display: inline-block;
+  width: 80px;
+  height: 58px;
+  background-size: 80% 100%;
+}
+
 .lucky .crotary .left .mids {
   width: 100px;
   height: 100px;
@@ -649,5 +656,65 @@ li {
 
 .footer .footright div li i {
   font-size: 26px;
+}
+
+.point {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.point > .pointfont {
+  width: 250px;
+  height: 300px;
+  border: 1px solid gray;
+  background-color: white;
+  position: relative;
+}
+
+.point > .pointfont > p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.point > .pointfont > p > .pointname {
+  font-size: 24px;
+  font-weight: bolder;
+  color: skyblue;
+}
+
+.point > .pointfont > i {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: tomato;
 }
 /*# sourceMappingURL=index.css.map */
