@@ -1,0 +1,237 @@
+@charset 'utf-8';
+@import "common";
+@mixin  forimg{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+@mixin pagesize {
+    width: 100vw;
+    height: 100vh;
+}
+body{
+    margin: 0;
+    padding: 0;
+    .web{
+        .loadpage{
+            @include pagesize;
+            background-image: url('../img/load/load.png');
+            @include forimg;
+            position: relative;
+            display: none;
+            .loadnum{
+                position: absolute;
+                left: 1rem;
+                bottom: 5.5rem;
+                color: white;
+                font-weight: bolder;
+            }
+            .midload{
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                left: 7rem;
+                bottom: 0.5rem;
+                animation: goup 1.5s ease;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .tiaoload{
+                width: 80px;
+                height: 50px;
+                position: absolute;
+                right: 1rem;
+                bottom: 1rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .startpage{
+            @include pagesize;
+            position: relative;
+            .light{
+                width: 0;
+                height: 0;
+                border-top: 40px solid transparent;
+                border-bottom: 40px solid transparent;
+                border-left: 25rem solid #555;
+                border-right: 25rem solid #555;
+                position: absolute;
+                top: -999px;
+                left: -999px;
+                right: -999px;
+                bottom: -999px;
+                margin: auto;
+            }
+            .lg1{
+                transform: rotateZ(0deg);
+                animation: lgs1 3s linear infinite;
+            }
+            .lg2{
+                transform: rotateZ(30deg);
+                animation: lgs2 3s linear infinite;
+            }
+            .lg3{
+                transform: rotateZ(60deg);
+                animation: lgs3 3s linear infinite;
+            }
+            .lg4{
+                transform: rotateZ(90deg);
+                animation: lgs4 3s linear infinite;
+            }
+            .lg5{
+                transform: rotateZ(120deg);
+                animation: lgs5 3s linear infinite;
+            }
+            .lg6{
+                transform: rotateZ(150deg);
+                animation: lgs6 3s linear infinite;
+            }
+            .starthead{
+                z-index: 999;
+                position: absolute;
+                .logo{
+                    padding-top: 10px;
+                    padding-right: 10px;
+                    text-align: right;                  
+                    img{
+                        width: 40%;
+                        height: 80%;
+                    }
+                }
+                .item{
+                    text-align: center;
+                    margin-top: 15px;
+                    img{
+                        width: 90%;
+                        height: 100%;
+                    }
+                }
+            }
+            .mouce{
+                z-index: 0;
+                height: 50%;
+                position: absolute;
+                top: 14rem;
+                animation: moucebig 0.5s linear infinite;
+                .moucing{
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    img{
+                        width: 80%;
+                        height: 70%;
+                    }
+                }
+            }
+            .man{
+                position: absolute;
+                bottom: 2rem;
+                left: 0;
+                right: 0;
+                display: flex;
+                z-index: 100;
+                .aboutlman{
+                    position: absolute;
+                    z-index: 100;
+                    top: -3rem;
+                    left: 0.5rem;
+                    width: 40%;
+                    height: 70%;
+                    animation: alman 1s linear infinite;
+                    img{
+                        width: 80%;
+                        height: 100%;
+                    }
+                }
+                .lman{
+                    width: 50%;
+                    padding-left: 10px;
+                    img{
+                        width: 100%;
+                        height: 85%;
+                    }
+                }
+                .rman{
+                    width: 50%;
+                    padding-right: 5px;
+                    img{
+                        width: 100%;
+                        height: 95%;
+                    }
+                }
+            }
+            .startbtu{
+                position: absolute;
+                bottom: 1.5rem;
+                z-index: 999;
+                text-align: center;
+                animation: stbtu 2s linear infinite;
+                img{
+                    width: 45%;
+                    height: 100%;
+                }
+            }
+        }
+        .swiper-container {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+        }
+    }
+}
+  
+
+@keyframes goup {
+    from{transform:translateY(100%) scale(0,0);}
+    to {transform: translateY(0) scale(1,1);}
+}
+
+@keyframes lgs1{
+    from{transform: rotateZ(0deg);}
+    to{transform: rotateZ(360deg);}
+}
+@keyframes lgs2{
+    from{transform: rotateZ(30deg);}
+    to{transform: rotateZ(390deg);}
+}
+@keyframes lgs3{
+    from{transform: rotateZ(60deg);}
+    to{transform: rotateZ(420deg);}
+}
+@keyframes lgs4{
+    from{transform: rotateZ(90deg);}
+    to{transform: rotateZ(450deg);}
+}
+@keyframes lgs5{
+    from{transform: rotateZ(120deg);}
+    to{transform: rotateZ(480deg);}
+}
+@keyframes lgs6{
+    from{transform: rotateZ(150deg);}
+    to{transform: rotateZ(510deg);}
+}
+
+@keyframes moucebig{
+    from{transform: scale(1,1);}
+    to{transform: scale(1.05,1.05);}
+}
+
+@keyframes alman{
+    from{transform: rotateZ(0);}
+    to{transform: rotateZ(5deg);}
+}
+
+@keyframes stbtu{
+    0%{transform: rotateZ(0) scale3d(1,1,1);}
+    20%{transform: rotateZ(5deg) scale3d(1.15,1.15,1.15);}
+    35%{transform: rotateZ(0) scale3d(1.2,1.2,1.2);}
+    50%{transform: rotateZ(-5deg) scale3d(1.25,1.25,1.25);}
+    65%{transform: rotateZ(0deg) scale3d(1.3,1.3,1.3);}
+    75%{transform: rotateZ(5deg) scale3d(1.35,1.35,1.35);}
+    90%{transform: rotateZ(0deg) scale3d(1.4,1.4,1.4);}
+    100%{transform: rotateZ(-5deg) scale3d(1.4,1.4,1.4);}
+}
