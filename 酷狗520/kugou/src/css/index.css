@@ -104,7 +104,6 @@ body .web .loadpage {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
-  display: none;
 }
 
 body .web .loadpage .loadnum {
@@ -147,6 +146,7 @@ body .web .startpage {
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 body .web .startpage .light {
@@ -314,9 +314,532 @@ body .web .startpage .startbtu img {
 }
 
 body .web .swiper-container {
-  display: none;
   width: 100vw;
   height: 100vh;
+}
+
+body .web .swiper-container .swiper-wrapper .ssone .movie {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/banner/movie/movie.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+body .web .swiper-container .swiper-wrapper .ssone .movie .movieone {
+  text-align: center;
+  position: absolute;
+  top: 55%;
+  z-index: 999;
+}
+
+body .web .swiper-container .swiper-wrapper .ssone .movie .movieone img {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssone .movie .movietwo {
+  text-align: center;
+  position: absolute;
+  top: 28%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssone .movie .movietwo img {
+  width: 80%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssone .movie .moviethree {
+  position: absolute;
+  top: 15%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssone .movie .moviethree img {
+  width: 90%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo {
+  position: relative;
+  overflow: hidden;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rock {
+  position: relative;
+  top: 50%;
+  left: 0;
+  right: 0;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rock .lighttwo {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 25rem solid #555;
+  border-right: 25rem solid #555;
+  position: absolute;
+  top: -999px;
+  left: -999px;
+  right: -999px;
+  bottom: -999px;
+  margin: auto;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rock .lg11 {
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+  -webkit-animation: lgs1 3s linear infinite;
+          animation: lgs1 3s linear infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rock .lg22 {
+  -webkit-transform: rotateZ(30deg);
+          transform: rotateZ(30deg);
+  -webkit-animation: lgs2 3s linear infinite;
+          animation: lgs2 3s linear infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rock .lg33 {
+  -webkit-transform: rotateZ(60deg);
+          transform: rotateZ(60deg);
+  -webkit-animation: lgs3 3s linear infinite;
+          animation: lgs3 3s linear infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rock .lg44 {
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+  -webkit-animation: lgs4 3s linear infinite;
+          animation: lgs4 3s linear infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rock .lg55 {
+  -webkit-transform: rotateZ(120deg);
+          transform: rotateZ(120deg);
+  -webkit-animation: lgs5 3s linear infinite;
+          animation: lgs5 3s linear infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rock .lg66 {
+  -webkit-transform: rotateZ(150deg);
+          transform: rotateZ(150deg);
+  -webkit-animation: lgs6 3s linear infinite;
+          animation: lgs6 3s linear infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .caideng {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .caideng img {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rockman {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 9rem;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rockman .rockml {
+  width: 50%;
+  position: absolute;
+  top: 2rem;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rockman .rockml img {
+  width: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rockman .rockmr {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rockman .rockmr img {
+  width: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rockmid {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 5.5rem;
+  text-align: center;
+  z-index: 999;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rockmid .rockmidman {
+  width: 70%;
+  position: absolute;
+  left: 15%;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rockmid .rockmidman img {
+  width: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rockmb {
+  width: 100%;
+  position: absolute;
+  bottom: 35%;
+  z-index: 100;
+}
+
+body .web .swiper-container .swiper-wrapper .sstwo .rockmb img {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/banner/classic/back.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .classicdeng {
+  position: absolute;
+  top: 0;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .classicdeng img {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .bang {
+  position: absolute;
+  top: 25%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .bang > div {
+  width: 60%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .bang > div > img {
+  width: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .bang .bangone {
+  position: relative;
+  z-index: 100;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .bang .bangtwo {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  top: 30%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .qiang {
+  position: absolute;
+  top: 45%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .qiang img {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .threeman {
+  position: absolute;
+  top: 10%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .threeman img {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .jojo {
+  position: absolute;
+  top: 10%;
+  height: 60%;
+  z-index: 150;
+  text-align: center;
+}
+
+body .web .swiper-container .swiper-wrapper .ssthree .jojo img {
+  width: 90%;
+  height: 90%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssfour {
+  background-image: url("../img/banner/rapper/car-bj.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+body .web .swiper-container .swiper-wrapper .ssfour .rapperone {
+  position: absolute;
+  top: 4rem;
+  left: 1rem;
+  -webkit-animation: moucebig 0.5s linear infinite;
+          animation: moucebig 0.5s linear infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .ssfour .rapperone img {
+  width: 70%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .ssfour .rappertwo {
+  position: absolute;
+  top: 10rem;
+  text-align: center;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .ssfour .rappertwo img {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .oldsong {
+  background-image: url("../img/banner/oldsong/laogeye-yuanhBj.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+body .web .swiper-container .swiper-wrapper .oldsong .oldsonghead {
+  position: absolute;
+  top: 0;
+  right: -8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body .web .swiper-container .swiper-wrapper .oldsong .oldsonghead img {
+  width: 90%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .oldsong .oldsongmid {
+  position: absolute;
+  top: 4rem;
+  height: 50%;
+  text-align: center;
+  z-index: 999;
+}
+
+body .web .swiper-container .swiper-wrapper .oldsong .oldsongmid img {
+  width: 80%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .oldsong .oldsongright {
+  position: absolute;
+  top: 13rem;
+  text-align: center;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+body .web .swiper-container .swiper-wrapper .oldsong .oldsongright img {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .pop {
+  background-image: url("../img/banner/pop/liuxingge-bolang.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+body .web .swiper-container .swiper-wrapper .pop .popleft {
+  position: absolute;
+  top: 10rem;
+  width: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .pop .popleft img {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .pop .popmid {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  width: 60%;
+  text-align: end;
+}
+
+body .web .swiper-container .swiper-wrapper .pop .popmid img {
+  width: 95%;
+  height: 100%;
+}
+
+body .web .swiper-container .swiper-wrapper .pop .popright {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  width: 60%;
+  text-align: left;
+}
+
+body .web .swiper-container .swiper-wrapper .pop .popright img {
+  width: 90%;
+  height: 100%;
+}
+
+body .web .swiper-container .select {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 9999;
+  width: 100vw;
+  padding-left: 1rem;
+  display: none;
+}
+
+body .web .swiper-container .select .selleft {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .web .swiper-container .select .selleft .a {
+  position: relative;
+}
+
+body .web .swiper-container .select .selleft .a .aa {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .select .selleft .a .songnameone {
+  position: absolute;
+  top: 0.5rem;
+  margin: 0;
+  left: 3rem;
+}
+
+body .web .swiper-container .select .selleft .b {
+  position: relative;
+}
+
+body .web .swiper-container .select .selleft .b .bb {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .select .selleft .b .songnametwo {
+  position: absolute;
+  top: 0.5rem;
+  margin: 0;
+  left: 3rem;
+}
+
+body .web .swiper-container .select .selleft .c {
+  position: relative;
+}
+
+body .web .swiper-container .select .selleft .c .cc {
+  width: 100%;
+  height: 100%;
+}
+
+body .web .swiper-container .select .selleft .c .songnamethree {
+  position: absolute;
+  top: 0.5rem;
+  margin: 0;
+  left: 3rem;
+}
+
+body .web .swiper-container .select .selright {
+  width: 40%;
+}
+
+body .web .swiper-container .select .selright .seltime {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+body .web .swiper-container .select .selright .seltime img {
+  width: 50%;
+  height: 90%;
+}
+
+body .web .swiper-container .select .selright .seltime .countdown {
+  position: absolute;
+  top: 30%;
+}
+
+body .web .swiper-container .select .selright .seldown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+body .web .swiper-container .select .selright .seldown img {
+  width: 35%;
+  height: 80%;
+}
+
+body .web .swiper-container .aboutaudio {
+  max-height: 0;
+  visibility: hidden;
 }
 
 @-webkit-keyframes goup {

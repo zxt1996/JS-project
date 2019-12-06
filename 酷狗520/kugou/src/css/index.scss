@@ -8,6 +8,50 @@
     width: 100vw;
     height: 100vh;
 }
+@mixin lights {
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 25rem solid #555;
+    border-right: 25rem solid #555;
+    position: absolute;
+    top: -999px;
+    left: -999px;
+    right: -999px;
+    bottom: -999px;
+    margin: auto;
+}
+
+@mixin aboutlg1 {
+    transform: rotateZ(0deg);
+    animation: lgs1 3s linear infinite;
+}
+
+@mixin aboutlg2 {
+    transform: rotateZ(30deg);
+    animation: lgs2 3s linear infinite;
+}
+
+@mixin aboutlg3 {
+    transform: rotateZ(60deg);
+    animation: lgs3 3s linear infinite;
+}
+
+@mixin aboutlg4 {
+    transform: rotateZ(90deg);
+    animation: lgs4 3s linear infinite;
+}
+
+@mixin aboutlg5 {
+    transform: rotateZ(120deg);
+    animation: lgs5 3s linear infinite;
+}
+
+@mixin aboutlg6 {
+    transform: rotateZ(150deg);
+    animation: lgs6 3s linear infinite;
+}
 body{
     margin: 0;
     padding: 0;
@@ -17,7 +61,7 @@ body{
             background-image: url('../img/load/load.png');
             @include forimg;
             position: relative;
-            display: none;
+            // display: none;
             .loadnum{
                 position: absolute;
                 left: 1rem;
@@ -52,43 +96,28 @@ body{
         .startpage{
             @include pagesize;
             position: relative;
+            overflow: hidden;
+            // display: none;
             .light{
-                width: 0;
-                height: 0;
-                border-top: 40px solid transparent;
-                border-bottom: 40px solid transparent;
-                border-left: 25rem solid #555;
-                border-right: 25rem solid #555;
-                position: absolute;
-                top: -999px;
-                left: -999px;
-                right: -999px;
-                bottom: -999px;
-                margin: auto;
+                @include lights;
             }
             .lg1{
-                transform: rotateZ(0deg);
-                animation: lgs1 3s linear infinite;
+                @include aboutlg1;
             }
             .lg2{
-                transform: rotateZ(30deg);
-                animation: lgs2 3s linear infinite;
+                @include aboutlg2;
             }
             .lg3{
-                transform: rotateZ(60deg);
-                animation: lgs3 3s linear infinite;
+                @include aboutlg3;
             }
             .lg4{
-                transform: rotateZ(90deg);
-                animation: lgs4 3s linear infinite;
+                @include aboutlg4;
             }
             .lg5{
-                transform: rotateZ(120deg);
-                animation: lgs5 3s linear infinite;
+                @include aboutlg5;
             }
             .lg6{
-                transform: rotateZ(150deg);
-                animation: lgs6 3s linear infinite;
+                @include aboutlg6;
             }
             .starthead{
                 z-index: 999;
@@ -177,9 +206,389 @@ body{
             }
         }
         .swiper-container {
-            display: none;
             width: 100vw;
             height: 100vh;
+            .swiper-wrapper{
+                .ssone{
+                    // display: none;
+                    .movie{
+                        width: 100%;
+                        height: 100%;
+                        background-image: url('../img/banner/movie/movie.png');
+                        @include forimg;
+                        position: relative;
+                        // display: none;
+                        .movieone{
+                            text-align: center;
+                            position: absolute;
+                            top:55%;
+                            z-index: 999;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        .movietwo{
+                            text-align: center;
+                            position: absolute;
+                            top:28%;
+                            img{
+                                width: 80%;
+                                height: 100%;
+                            }
+                        }
+                        .moviethree{
+                            position: absolute;
+                            top:15%;
+                            img{
+                                width: 90%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+                .sstwo{
+                    position: relative;
+                    overflow: hidden;
+                    // display: none;
+                    .rock{
+                        position: relative;
+                        top: 50%;
+                        left: 0;
+                        right: 0;
+                        .lighttwo{
+                            @include lights;
+                        }
+                        .lg11{
+                            @include aboutlg1;
+                        }
+                        .lg22{
+                            @include aboutlg2;
+                        }
+                        .lg33{
+                            @include aboutlg3;
+                        }
+                        .lg44{
+                            @include aboutlg4;
+                        }
+                        .lg55{
+                            @include aboutlg5;
+                        }
+                        .lg66{
+                            @include aboutlg6;
+                        }
+                    }
+                    .caideng{
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        animation-iteration-count: infinite;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .rockman{
+                        position: absolute;
+                        z-index: 100;
+                        width: 100%;
+                        display: flex;
+                        top: 9rem;
+                        .rockml{
+                            width: 50%;
+                            position: absolute;
+                            top: 2rem;
+                            animation-iteration-count: infinite;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .rockmr{
+                            width: 50%;
+                            position: absolute;
+                            right: 0;
+                            animation-iteration-count: infinite;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .rockmid{
+                        position: absolute;
+                        z-index: 100;
+                        width: 100%;
+                        display: flex;
+                        top: 5.5rem;
+                        text-align: center;
+                        z-index: 999;
+                        .rockmidman{
+                            width: 70%;
+                            position: absolute;
+                            left: 15%;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    } 
+                    .rockmb{
+                        width: 100%;
+                        position: absolute;
+                        bottom: 35%;
+                        z-index: 100;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+                .ssthree{
+                    width: 100vw;
+                    height: 100vh;
+                    background-image: url('../img/banner/classic/back.png');
+                    @include forimg;
+                    position: relative;
+                    .classicdeng{
+                        position: absolute;
+                        top: 0;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .bang{
+                        position: absolute;
+                        top: 25%;
+                        >div{
+                            width: 60%;
+                            >img{
+                                width: 100%;
+                            }
+                        }
+                        .bangone{
+                            position: relative;
+                            z-index: 100;
+                        }
+                        .bangtwo{
+                            position: absolute;
+                            z-index: 999;   
+                            right: 0;
+                            top: 30%;
+                        }
+                    }
+                    .qiang{
+                         position: absolute;
+                         top: 45%;
+                         img{
+                             width: 100%;
+                             height: 100%;
+                         }
+                    }
+                    .threeman{
+                         position: absolute;
+                         top: 10%;
+                         img{
+                             width: 100%;
+                             height: 100%;
+                         }
+                    }
+                    .jojo{
+                         position: absolute;
+                         top: 10%;
+                         height: 60%;
+                         z-index: 150;
+                         text-align: center;
+                         img{
+                             width: 90%;
+                             height: 90%;
+                         }
+                    } 
+                }
+                .ssfour{
+                    background-image: url('../img/banner/rapper/car-bj.png');
+                    @include forimg;
+                    position: relative;
+                    .rapperone{
+                        position: absolute;
+                        top: 4rem;
+                        left: 1rem;
+                        animation: moucebig 0.5s linear infinite;
+                        img{
+                            width: 70%;
+                            height: 100%;
+                        }
+                    }
+                    .rappertwo{
+                        position: absolute;
+                        top: 10rem;
+                        text-align: center;
+                        animation-iteration-count: infinite;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+                .oldsong{
+                    background-image: url('../img/banner/oldsong/laogeye-yuanhBj.png');
+                    @include forimg;
+                    position: relative;
+                    .oldsonghead{
+                        position: absolute;
+                        top: 0;
+                        right: -8rem;
+                        display: flex;
+                        justify-content: flex-end;
+                        img{
+                            width: 90%;
+                            height: 100%;
+                        }
+                    }
+                    .oldsongmid{
+                        position: absolute;
+                        top: 4rem;
+                        height: 50%;
+                        text-align: center;
+                        z-index: 999;
+                        img{
+                            width: 80%;
+                            height: 100%;
+                        }
+                    }
+                    .oldsongright{
+                        position: absolute;
+                        top: 13rem;
+                        text-align: center;
+                        animation-iteration-count: infinite;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        } 
+                    }
+                }
+                .pop{
+                    background-image: url('../img/banner/pop/liuxingge-bolang.png');
+                    @include forimg;
+                    position: relative;
+                    .popleft{
+                        position: absolute;
+                        top: 10rem;
+                        width: 100%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .popmid{
+                        position: absolute;
+                        top: 3rem;
+                        right: 0;
+                        width: 60%;
+                        text-align: end;
+                        img{
+                            width: 95%;
+                            height: 100%;
+                        }
+                    }
+                    .popright{
+                        position: absolute;
+                        top: 1.5rem;
+                        left: 0;
+                        width: 60%;
+                        text-align: left;
+                        img{
+                            width: 90%;
+                            height: 100%;
+                        }
+                    } 
+                }
+            }
+            .select{
+                position: fixed;
+                bottom: 20px;
+                left: 0;
+                display: flex;
+                z-index: 9999;
+                width: 100vw;
+                padding-left: 1rem;
+                display: none;
+                .selleft{
+                    width: 60%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .a{
+                        position: relative;
+                        .aa{
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .songnameone{
+                            position: absolute;
+                            top: 0.5rem;
+                            margin: 0;
+                            left: 3rem;
+                        }
+                    }
+                    .b{
+                        position: relative;
+                        .bb{
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .songnametwo{
+                            position: absolute;
+                            top: 0.5rem;
+                            margin: 0;
+                            left: 3rem;
+                        }
+                    }
+                    .c{
+                        position: relative;
+                        .cc{
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .songnamethree{
+                            position: absolute;
+                            top: 0.5rem;
+                            margin: 0;
+                            left: 3rem;
+                        }
+                    }
+                }
+                .selright{
+                    width: 40%;
+                    .seltime{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
+                        position: relative;
+                        img{
+                            width: 50%;
+                            height: 90%;
+                        }
+                        .countdown{
+                            position: absolute;
+                            top: 30%;
+                        }
+                    }
+                    .seldown{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
+                        img{
+                            width: 35%;
+                            height: 80%;
+                        }
+                    }
+                }
+            }
+            .aboutaudio{
+                max-height: 0;
+                visibility: hidden;
+            }
         }
     }
 }
