@@ -91,12 +91,31 @@ function getJSON(url){
 startbtu.addEventListener('click',function(){
     startpage.style.display = 'none';
     cdowntime = 60;
+    countdowntime.textContent = `${cdowntime}s`;
     select.style.display = 'flex';
     nowsong(yourchance);
     uset = setInterval(()=>{
         cantime += 1;
         // console.log(cantime);
     },1000);
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop: true, // 循环模式选项
+        autoplay: true,//可选选项，自动滑动
+        autoplay : {
+            delay:10000
+        },
+        on:{
+            init: function(){
+              swiperAnimateCache(this); //隐藏动画元素 
+              swiperAnimate(this); //初始化完成开始动画
+            }, 
+            slideChangeTransitionEnd: function(){ 
+              swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+            //   动画只展现一次，去除ani类名
+            //   this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 
+            } 
+          }
+      })
 })
 
 // 每次更新歌曲数据
@@ -106,24 +125,6 @@ function nowsong(now){
     songnamethree.textContent = item[now][2];
     myaudio.src = '.'+audio[now];
 }
-var mySwiper = new Swiper ('.swiper-container', {
-    loop: true, // 循环模式选项
-    autoplay: true,//可选选项，自动滑动
-    autoplay : {
-        delay:10000
-    },
-    on:{
-        init: function(){
-          swiperAnimateCache(this); //隐藏动画元素 
-          swiperAnimate(this); //初始化完成开始动画
-        }, 
-        slideChangeTransitionEnd: function(){ 
-          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
-        //   动画只展现一次，去除ani类名
-        //   this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 
-        } 
-      }
-  })
 
   // 倒计时
 let setcdowntime = setInterval(()=>{
