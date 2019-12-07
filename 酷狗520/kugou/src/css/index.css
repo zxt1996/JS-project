@@ -842,6 +842,179 @@ body .web .swiper-container .aboutaudio {
   visibility: hidden;
 }
 
+body .web .endpage {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/end/back.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+
+body .web .endpage .endpagehead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0.5rem;
+}
+
+body .web .endpage .endpagehead .endhl {
+  width: 50%;
+  padding-left: 1rem;
+  position: relative;
+}
+
+body .web .endpage .endpagehead .endhl img {
+  width: 80%;
+  height: 100%;
+}
+
+body .web .endpage .endpagehead .endhl .endusername {
+  position: absolute;
+  top: 1rem;
+  right: 4rem;
+}
+
+body .web .endpage .endpagehead .endhr {
+  width: 50%;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+body .web .endpage .endpagehead .endhr img {
+  width: 75%;
+  height: 100%;
+}
+
+body .web .endpage .position {
+  position: absolute;
+  top: 4rem;
+  height: 30%;
+  width: 100%;
+  text-align: center;
+}
+
+body .web .endpage .position img {
+  width: 40%;
+  height: 80%;
+}
+
+body .web .endpage .resultnums {
+  position: absolute;
+  top: 14rem;
+  height: 30%;
+  width: 100%;
+  text-align: center;
+}
+
+body .web .endpage .resultnums img {
+  width: 50%;
+  height: 30%;
+}
+
+body .web .endpage .resultnums .thisnum {
+  position: absolute;
+  top: 1rem;
+  left: -999px;
+  right: -999px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+body .web .endpage .endpagemid {
+  position: absolute;
+  top: 18rem;
+  height: 27%;
+  width: 100%;
+  text-align: center;
+}
+
+body .web .endpage .endpagemid img {
+  width: 90%;
+  height: 60%;
+}
+
+body .web .endpage .endpagemid .endmidfont {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  right: -9999px;
+  font-weight: bold;
+}
+
+body .web .endpage .endpagechange {
+  position: absolute;
+  top: 25rem;
+  height: 30%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body .web .endpage .endpagechange .endcl {
+  width: 42%;
+}
+
+body .web .endpage .endpagechange .endcl img {
+  width: 100%;
+  height: 30%;
+}
+
+body .web .endpage .endpagechange .endcr {
+  width: 42%;
+}
+
+body .web .endpage .endpagechange .endcr img {
+  width: 100%;
+  height: 30%;
+}
+
+body .web .endpage .endrank {
+  position: absolute;
+  bottom: 0.1rem;
+  height: 30%;
+  width: 100%;
+  text-align: center;
+}
+
+body .web .endpage .endrank img {
+  width: 90%;
+  height: 90%;
+}
+
+body .forsecond {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+body .forsecond > span {
+  color: yellow;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
 @-webkit-keyframes goup {
   from {
     -webkit-transform: translateY(100%) scale(0, 0);
