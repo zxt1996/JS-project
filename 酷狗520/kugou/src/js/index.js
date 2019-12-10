@@ -36,30 +36,29 @@ let cantime = 0;
 let uset;
 // 设置倒计时的时间
 let cdowntime;
-let setload = setInterval(()=>{
-    nowload += 1;
-    changeload.textContent = nowload;
-    if(nowload == 100){
-        loadpage.style.display = 'none';
-        getJSON(myurl).then((res)=>{
-            // console.log(res);
-            let tempsetnum = setInterval(()=>{
-                let tempnum = parseInt(Math.random()*50);
-                if(temp.indexOf(tempnum)<0){
-                    temp.push(tempnum);
-                    audio.push(res[tempnum].audio);
-                    item.push(res[tempnum].item);
-                    answer.push(res[tempnum].answer);
-                }
-                if(temp.length == 30){
-                    // console.log(temp,audio,item,answer);
-                    clearInterval(tempsetnum);
-                }
-            },4);
-        });
-        clearInterval(setload);
-    }
-},10);
+getJSON(myurl).then((res)=>{
+    console.log(res);
+    let tempsetnum = setInterval(()=>{
+        let tempnum = parseInt(Math.random()*50);
+        if(temp.indexOf(tempnum)<0){
+            temp.push(tempnum);
+            audio.push(res[tempnum].audio);
+            item.push(res[tempnum].item);
+            answer.push(res[tempnum].answer);
+            nowload = parseInt(temp.length/30*100);
+            console.log(nowload);
+            changeload.textContent = nowload;
+        }
+        if(temp.length == 30){
+            // console.log(temp,audio,item,answer);
+            changeload.textContent = 100;
+            nowload = 100;
+            console.log(nowload);
+            loadpage.style.display = 'none';
+            clearInterval(tempsetnum);
+        }
+    },20);
+});
   
 
 // 请求音乐信息
@@ -157,10 +156,10 @@ let setcdowntime = setInterval(()=>{
 // 判断答案是否正确
 function judgeanswer(num){
     if(num <= 2){
-        yourchance += 1;
         if(answer[yourchance] == num){
             result += 1;
         }
+        yourchance += 1;
         nowsong(yourchance);
         cantime = 0;
     }
@@ -171,26 +170,26 @@ let setabc = setInterval(function(){
     // 选择监听
     a.addEventListener('click',function(e){
         e.stopPropagation();
-        if(cantime > 1){
+        if(cantime > 2){
             judgeanswer(0);
         }
     })
 
     b.addEventListener('click',function(e){
         e.stopPropagation();
-        if(cantime > 1){
+        if(cantime > 2){
             judgeanswer(1);
         }
     })
 
     c.addEventListener('click',function(e){
         e.stopPropagation();
-        if(cantime > 1){
+        if(cantime > 2){
             judgeanswer(2);
         }
     })
 
-    if(cantime < 2){
+    if(cantime <= 1){
         // console.log('请等两秒');
         a.addEventListener('click',onlycantwo);
         b.addEventListener('click',onlycantwo);
@@ -212,7 +211,7 @@ function onlycantwo(){
     forsecond.style.display = 'flex';
     setTimeout(()=>{
         forsecond.style.display = 'none';
-    },500);
+    },1000);
 }
 
 // 再次挑战
