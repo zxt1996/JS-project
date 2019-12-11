@@ -36,8 +36,24 @@ let cantime = 0;
 let uset;
 // 设置倒计时的时间
 let cdowntime;
-getJSON(myurl).then((res)=>{
-    console.log(res);
+
+
+//localStorage缓存ajax数据
+if(!localStorage[myurl]){
+    getJSON(myurl).then((res)=>{
+        localStorage[myurl] = JSON.stringify(res);
+        forajxa(res);
+        console.log('1');
+    })
+}else{
+   let atemp = localStorage.getItem(myurl);
+   console.log('2');
+   forajxa(JSON.parse(atemp));
+}
+
+
+//设置ajxa返回的数据
+function forajxa(res){
     let tempsetnum = setInterval(()=>{
         let tempnum = parseInt(Math.random()*50);
         if(temp.indexOf(tempnum)<0){
@@ -46,20 +62,19 @@ getJSON(myurl).then((res)=>{
             item.push(res[tempnum].item);
             answer.push(res[tempnum].answer);
             nowload = parseInt(temp.length/30*100);
-            console.log(nowload);
+            // console.log(nowload);
             changeload.textContent = nowload;
         }
         if(temp.length == 30){
             // console.log(temp,audio,item,answer);
             changeload.textContent = 100;
             nowload = 100;
-            console.log(nowload);
+            // console.log(nowload);
             loadpage.style.display = 'none';
             clearInterval(tempsetnum);
         }
     },20);
-});
-  
+}
 
 // 请求音乐信息
 function getJSON(url){
